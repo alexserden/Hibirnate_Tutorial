@@ -10,6 +10,9 @@ import javax.persistence.Query;
 import java.io.IOException;
 import java.util.List;
 
+import static org.hibernate.hql.internal.antlr.HqlTokenTypes.FROM;
+import static org.hibernate.hql.internal.antlr.HqlTokenTypes.SELECT;
+
 
 public class JavaIODeveloperRepositoryImpl implements DeveloperRepository {
 
@@ -44,8 +47,9 @@ public class JavaIODeveloperRepositoryImpl implements DeveloperRepository {
 
     public List<Developer> getAll() throws IOException {
         Session session = HibernateUtil.getSession();
-        Query query = session.createQuery("");
+        Query query = session.createQuery("FROM Developer");
 
-        return null;
+
+        return query.getResultList();
     }
 }

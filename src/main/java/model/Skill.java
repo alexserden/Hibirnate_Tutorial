@@ -2,7 +2,7 @@ package model;
 
 import javax.persistence.Column;
 
-public class Skill extends IdEntity {
+public class Skill extends BaseEntity {
     @Column(name = "skill")
     private String name;
 

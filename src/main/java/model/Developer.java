@@ -1,26 +1,29 @@
 package model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "Developer")
+@Table(name = "developer")
 
-public class Developer extends IdEntity {
-    @Column(name = "firstName")
+public class Developer extends BaseEntity {
+    @Column(name = "first_name")
     private String firstName;
-    @Column(name = "lastName")
+    @Column(name = "last_name")
     private String lastName;
     @Column(name = "specialty")
     private String specialty;
-    @Column(name = "skills")
+    @ManyToMany
+    @JoinTable (name = "developer_skill",
+            joinColumns = {@JoinColumn (name = "developer_id")},
+            inverseJoinColumns ={ @JoinColumn (name = "skill_id")})
     private Set<Skill> skills;
-    @Column (name = "account")
+    @OneToOne
+    @PrimaryKeyJoinColumn
     private Account account;
 
-    public Developer(Long id, String firstName, String lastName, String specialty, Set<Skill> skills, Account account) {
+    public Developer(Long id, String firstName, String lastName, String specialty,
+                     Set<Skill> skills, Account account) {
         super(id);
         this.firstName = firstName;
         this.lastName = lastName;

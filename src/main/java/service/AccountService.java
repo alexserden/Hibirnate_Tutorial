@@ -10,7 +10,7 @@ public class AccountService {
     AccountRepository accountRepository;
 
     public AccountService() throws IOException {
-        accountRepository = new JavaIOAccountRepositoryImpl();
+       // accountRepository = new JavaIOAccountRepositoryImpl();
     }
 
     public void save(Account account) throws IOException {

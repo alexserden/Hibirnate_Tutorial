@@ -2,7 +2,7 @@ package model;
 
 import javax.persistence.Column;
 
-public class Account extends IdEntity {
+public class Account extends BaseEntity {
 
     @Column(name = "account")
     private String accountData;

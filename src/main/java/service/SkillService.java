@@ -7,31 +7,31 @@ import java.util.List;
 import java.util.Set;
 
 public class SkillService {
-    SkillRepository skillService = new SkillService();
+    //SkillRepository skillService = new SkillService();
 
-    public SkillsController() throws IOException {
+    public SkillService() throws IOException {
     }
 
     public void save(Skill skill) throws IOException {
-        skillService.save(skill);
+       // skillService.save(skill);
     }
 
     public void update(Set<Skill> skill) throws IOException {
 
-        skillService.update(skill);
+       // skillService.update(skill);
 
     }
     public void delete(Long id) throws IOException {
-        skillService.delete(id);
+       // skillService.delete(id);
     }
 
 
     public Skill getById(Long id) throws IOException {
-        return skillService.getById(id);
+        return null ;//skillService.getById(id);
     }
 
 
     public List<Skill> getAll() throws IOException {
-        return skillService.getAll();
+        return null; //skillService.getAll();
     }
 }

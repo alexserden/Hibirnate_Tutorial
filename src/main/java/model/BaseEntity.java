@@ -2,13 +2,15 @@ package model;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 
-public class IdEntity {
+@MappedSuperclass
+public class BaseEntity {
     @Id
-    @Column(name = "id", unique = true, nullable = false)
+    @Column(name = "id")
     private Long id;
 
-    public IdEntity(Long id) {
+    public BaseEntity(Long id) {
         this.id = id;
     }
 
